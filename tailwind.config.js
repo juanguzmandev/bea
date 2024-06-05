@@ -21,6 +21,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       'cornsilk': '#fefae0',
+      'cornsilk-shadow': '#fdf5c0',
       'darkmossgreen': '#606c38',
       'earthyellow' : '#dda15e',
       'pakistangreen' : '#283618',

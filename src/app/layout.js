@@ -1,4 +1,5 @@
 import { EB_Garamond, IBM_Plex_Mono } from "next/font/google";
+import Header from '@/app/ui/header.js';
 import "./globals.css";
 
 const ibmPlexMono = IBM_Plex_Mono({ subsets: ["latin"], variable: '--font-ibm-plex-mono', weight: ['400'] });
@@ -12,7 +13,30 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${ibmPlexMono.variable} ${ebGaramond.variable}`}>
-      <body>{children}</body>
+      <body className="bg-[#fffdf0]">
+        <Header>
+          <header className="backdrop-blur-md bottom-0 bg-cornsilk/75 fixed font-bold font-ibmPlexMono lg:py-2 lg:static lg:text-base py-3 text-darkmossgreen text-xs uppercase w-screen">
+            <nav>
+                <ul className="flex justify-around justify-center">
+                <li className="active:underline duration-500 hover:text-pakistangreen inline-block text-center transition-all">
+                    <a href="./photos">Fotografías</a>
+                </li>
+                <li className="active:underline duration-500 hover:text-pakistangreen inline-block text-center transition-all">
+                    <a href="./poems">Poemas</a>
+                </li>
+                <li className="inline-block text-center">Logo</li>
+                <li className="active:underline duration-500 hover:text-pakistangreen inline-block text-center transition-all">
+                    <a href="./about">Sobre mí</a>
+                </li>
+                <li className="active:underline duration-500 hover:text-pakistangreen inline-block text-center transition-all">
+                    <a href="./contact">Contacto</a>
+                </li>
+                </ul>
+            </nav>
+          </header>
+        </Header>
+        {children}
+      </body>
     </html>
   );
 }
